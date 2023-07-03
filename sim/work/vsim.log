@@ -1,0 +1,128 @@
+# vsim mem_top_tb -wlf vsim.wlf -l vsim.log -sv_lib ../libs/uvm-1.1d/lib/uvm_dpiWin64 -batch -do "vsim -solvefaildebug -voptargs=+acc +UVM_VERBOSITY=UVM_MEDIUM +UVM_TESTNAME=mem_wr_rd_test; run -all; exit" -voptargs="+acc" "+UVM_VERBOSITY=UVM_MEDIUM" "+UVM_TESTNAME=mem_wr_rd_test" 
+# Start time: 17:33:45 on Nov 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.uvm_pkg(fast)
+# Loading work.mem_top_tb_sv_unit(fast)
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Loading work.mem_top_tb(fast)
+# Loading work.mem_if(fast)
+# Loading work.memory(fast)
+# Loading work.mem_if(fast)
+# Loading .\../libs/uvm-1.1d/lib/uvm_dpiWin64.dll
+# 
+# vsim -solvefaildebug -voptargs=+acc +UVM_VERBOSITY=UVM_MEDIUM +UVM_TESTNAME=mem_wr_rd_test
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test mem_wr_rd_test...
+# ----------------------------------------------------------------
+# Name                         Type                    Size  Value
+# ----------------------------------------------------------------
+# uvm_test_top                 mem_wr_rd_test          -     @448 
+#   env                        mem_model_env           -     @456 
+#     mem_agnt                 mem_agent               -     @468 
+#       driver                 mem_driver              -     @506 
+#         rsp_port             uvm_analysis_port       -     @523 
+#         seq_item_port        uvm_seq_item_pull_port  -     @514 
+#       monitor                mem_monitor             -     @485 
+#         item_collected_port  uvm_analysis_port       -     @497 
+#       sequencer              mem_sequencer           -     @532 
+#         rsp_export           uvm_analysis_export     -     @540 
+#         seq_item_export      uvm_seq_item_pull_imp   -     @646 
+#         arbitration_queue    array                   0     -    
+#         lock_queue           array                   0     -    
+#         num_last_reqs        integral                32    'd1  
+#         num_last_rsps        integral                32    'd1  
+#     mem_scb                  mem_scoreboard          -     @476 
+#       item_collected_export  uvm_analysis_imp        -     @662 
+# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# req                            mem_seq_item  -     @678                                          
+#   addr                         integral      2     'h1                                           
+#   wr_en                        integral      1     'h1                                           
+#   rd_en                        integral      1     'h0                                           
+#   begin_time                   time          64    0                                             
+#   depth                        int           32    'd3                                           
+#   parent sequence (name)       string        6     wr_seq                                        
+#   parent sequence (full name)  string        46    uvm_test_top.env.mem_agnt.sequencer.seq.wr_seq
+#   sequencer                    string        35    uvm_test_top.env.mem_agnt.sequencer           
+# -------------------------------------------------------------------------------------------------
+# UVM_INFO ../src/mem_scoreboard.sv(59) @ 25: uvm_test_top.env.mem_scb [mem_scoreboard] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../src/mem_scoreboard.sv(60) @ 25: uvm_test_top.env.mem_scb [mem_scoreboard] Addr: 1
+# UVM_INFO ../src/mem_scoreboard.sv(61) @ 25: uvm_test_top.env.mem_scb [mem_scoreboard] Data: 40
+# UVM_INFO ../src/mem_scoreboard.sv(62) @ 25: uvm_test_top.env.mem_scb [mem_scoreboard] ------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# req                            mem_seq_item  -     @711                                          
+#   addr                         integral      2     'h3                                           
+#   wr_en                        integral      1     'h0                                           
+#   rd_en                        integral      1     'h1                                           
+#   begin_time                   time          64    15                                            
+#   depth                        int           32    'd3                                           
+#   parent sequence (name)       string        6     rd_seq                                        
+#   parent sequence (full name)  string        46    uvm_test_top.env.mem_agnt.sequencer.seq.rd_seq
+#   sequencer                    string        35    uvm_test_top.env.mem_agnt.sequencer           
+# -------------------------------------------------------------------------------------------------
+# UVM_INFO ../src/mem_scoreboard.sv(66) @ 55: uvm_test_top.env.mem_scb [mem_scoreboard] ------ :: READ DATA Match :: ------
+# UVM_INFO ../src/mem_scoreboard.sv(67) @ 55: uvm_test_top.env.mem_scb [mem_scoreboard] Addr: 3
+# UVM_INFO ../src/mem_scoreboard.sv(68) @ 55: uvm_test_top.env.mem_scb [mem_scoreboard] Expected Data: ff Actual Data: ff
+# UVM_INFO ../src/mem_scoreboard.sv(69) @ 55: uvm_test_top.env.mem_scb [mem_scoreboard] ------------------------------------
+# UVM_INFO ../libs/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 95: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../src/mem_base_test.sv(53) @ 95: uvm_test_top [mem_wr_rd_test] ---------------------------------------
+# UVM_INFO ../src/mem_base_test.sv(54) @ 95: uvm_test_top [mem_wr_rd_test] ----           TEST PASS           ----
+# UVM_INFO ../src/mem_base_test.sv(55) @ 95: uvm_test_top [mem_wr_rd_test] ---------------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   13
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [TEST_DONE]     1
+# [mem_scoreboard]     8
+# [mem_wr_rd_test]     3
+# ** Note: $finish    : ../libs/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 95 ns  Iteration: 53  Instance: /mem_top_tb
+# End time: 17:33:48 on Nov 08,2022, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

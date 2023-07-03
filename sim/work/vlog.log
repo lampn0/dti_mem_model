@@ -1,0 +1,14 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 17:44:29 on Nov 08,2022
+vlog -writetoplevels questa.tops -timescale 1ns/1ns "+incdir+../libs/uvm-1.1d/src" -f filelist_rtl.f -f filelist_tb.f -l vlog.log 
+-- Compiling module memory
+-- Compiling package uvm_pkg
+-- Compiling package mem_top_tb_sv_unit
+-- Importing package uvm_pkg
+-- Compiling interface mem_if
+-- Compiling module mem_top_tb
+
+Top level modules:
+	mem_top_tb
+End time: 17:44:30 on Nov 08,2022, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
